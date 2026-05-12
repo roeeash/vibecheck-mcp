@@ -1,0 +1,45 @@
+{
+  "name": "vibecheck-mcp",
+  "version": "0.1.0",
+  "description": "Audit your local dev server with Claude — MCP server for VibeCheck",
+  "type": "module",
+  "bin": {
+    "vibecheck-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "vendor/"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --outDir dist",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.0",
+    "pino": "^9.0.0",
+    "pino-http": "^10.0.0",
+    "zod": "^3.25.0"
+  },
+  "peerDependencies": {
+    "playwright": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "performance",
+    "audit",
+    "vibecheck",
+    "claude",
+    "playwright"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  }
+}
