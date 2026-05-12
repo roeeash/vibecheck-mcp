@@ -25,10 +25,7 @@ Add `.mcp.json` to your project root:
   "mcpServers": {
     "vibecheck": {
       "command": "npx",
-      "args": ["vibecheck-mcp@latest"],
-      "env": {
-        "DEV_PORT": "3000"
-      }
+      "args": ["@roeeash/vibecheck-mcp@latest"]
     }
   }
 }
@@ -36,12 +33,10 @@ Add `.mcp.json` to your project root:
 
 Change `DEV_PORT` to match your dev server's port (default: `5173`).
 
-Open the project in **Claude Code** — the MCP server loads automatically. Start your dev server, then call:
+Open the project in **Claude Code** — the MCP server loads automatically. Start your dev server, then run:
 
 ```
-audit_dev_server()
-audit_dev_server(/dashboard)
-get_last_audit()
+vibecheck
 ```
 
 ---
@@ -50,8 +45,13 @@ get_last_audit()
 
 | Tool | Description |
 |---|---|
-| `audit_dev_server(path?)` | Audit your dev server at the given path (default `/`). Starts the audit API automatically. |
-| `get_last_audit()` | Return results from the most recently completed audit without re-running. |
+| `vibecheck` | Audit your dev server. Starts the audit API automatically and returns a full report. |
+
+> **Note:** `vibecheck` is a deferred tool. Before calling it, Claude must load its schema via `ToolSearch`:
+> ```
+> ToolSearch select:vibecheck
+> ```
+> After that, `vibecheck` can be called normally in the same session.
 
 ---
 

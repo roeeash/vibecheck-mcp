@@ -1,5 +1,5 @@
 {
-  "name": "vibecheck-mcp",
+  "name": "@roeeash/vibecheck-mcp",
   "version": "0.1.0",
   "description": "Audit your local dev server with Claude — MCP server for VibeCheck",
   "type": "module",
